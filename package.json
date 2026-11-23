@@ -10,9 +10,9 @@
     "build:web": "vite build",
     "build": "npm run build:web && npm run build:electron",
     "start": "npm run build && electron .",
-    "pack:win": "npm run build && electron-builder --win",
-    "pack:mac": "npm run build && electron-builder --mac",
-    "pack:linux": "npm run build && electron-builder --linux",
+    "pack:win": "npm run build && electron-builder --win --publish never",
+    "pack:mac": "npm run build && electron-builder --mac --publish never",
+    "pack:linux": "npm run build && electron-builder --linux --publish never",
     "test:core": "npm run build:electron && node dist-electron/test-core.js"
   },
   "dependencies": {
