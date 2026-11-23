@@ -31,6 +31,7 @@ mac:
 linux:
   icon: build/icon.png
   category: Development
+  maintainer: "fangyubao <fangyubao@users.noreply.github.com>"
   target:
     - AppImage
     - deb
