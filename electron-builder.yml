@@ -1,0 +1,37 @@
+appId: com.mcuforge.studio
+productName: MCU Forge Studio
+copyright: Copyright © 2026 MCU Forge
+directories:
+  output: release
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - build/icon.*
+  - package.json
+win:
+  icon: build/icon.ico
+  target:
+    - nsis
+    - portable
+nsis:
+  artifactName: "${productName}-${version}-win-${arch}-setup.${ext}"
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+portable:
+  artifactName: "${productName}-${version}-win-${arch}-portable.${ext}"
+mac:
+  icon: build/icon.png
+  category: public.app-category.developer-tools
+  target:
+    - dmg
+    - zip
+  artifactName: "${productName}-${version}-mac-${arch}.${ext}"
+linux:
+  icon: build/icon.png
+  category: Development
+  target:
+    - AppImage
+    - deb
+  artifactName: "${productName}-${version}-linux-${arch}.${ext}"

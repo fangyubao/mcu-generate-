@@ -1,0 +1,34 @@
+{
+  "name": "mcu-forge",
+  "version": "1.0.0",
+  "description": "Cross-platform MCU Makefile/CMake Project Manager & VSCode/Vim/clangd Integrator (Windows, macOS, Linux)",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && tsc -p tsconfig.electron.json && electron .\"",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "build:web": "vite build",
+    "build": "npm run build:web && npm run build:electron",
+    "start": "npm run build && electron .",
+    "pack:win": "npm run build && electron-builder --win",
+    "pack:mac": "npm run build && electron-builder --mac",
+    "pack:linux": "npm run build && electron-builder --linux",
+    "test:core": "npm run build:electron && node dist-electron/test-core.js"
+  },
+  "dependencies": {
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "wait-on": "^8.0.1"
+  }
+}
