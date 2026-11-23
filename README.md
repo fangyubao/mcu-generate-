@@ -64,14 +64,9 @@
 ![主工作台](docs/screenshots/02-workspace.png)
 
 ### 3. 工具链与调试烧录器面板
-自动列出本机探测到的编译器与调试器（点击一键填入），也支持手动浏览导入小众 MCU 的自定义编译器、GDB、OpenOCD、J-Link、ST-Link、PyOCD、SVD 寄存器文件或自定义烧录命令。
+自动列出本机探测到的编译器与调试器（点击一键填入），也支持手动浏览导入小众 MCU 的自定义编译器、GDB、OpenOCD、J-Link、ST-Link、PyOCD、SVD 寄存器文件或自定义烧录命令；在「文件预览与写入」与「固件体积分析」标签页中还可实时审查待生成配置（带 `.bak` 自动备份）及分析 Flash / RAM 符号占用 Top 排行。
 
 ![工具链与调试烧录器](docs/screenshots/03-toolchain.png)
-
-### 4. 生成文件实时预览与安全写入
-写入磁盘前可逐一审查即将生成的 `Makefile` / `CMakeLists.txt`、`compile_commands.json`、`.clangd`、`.vscode/*` 与 `flash.jlink`，默认开启 `.bak` 首次备份，安全可控。
-
-![文件预览与写入](docs/screenshots/04-preview.png)
 
 ---
 
